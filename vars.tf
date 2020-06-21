@@ -1,23 +1,27 @@
-variable "AWSRegion" {
+variable "aws_region" {
   default = "us-east-2"
 }
 
-variable "AZ1" {
+variable "az1" {
   default = "us-east-2a"
 }
 
-variable "AMI" {
+variable "az2" {
+  default = "us-east-2b"
+}
+
+variable "ami" {
   default = "ami-0e84e211558a022c0"
 }
 
-variable "InstType" {
+variable "ec2_inst_type" {
   default = "t2.micro"
 }
 
-variable "appPort" {
+variable "app_port" {
   default = "5000"
 }
 
-variable "publicKeyPath" {
+variable "public_key_path" {
   default = "~/.ssh/id_rsa.pub"
 }
