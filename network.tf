@@ -10,8 +10,13 @@ resource "aws_route_table" "dev-rt" {
   }
 }
 
-resource "aws_route_table_association" "dev-rt-2-subnet"{
+resource "aws_route_table_association" "dev-rt-2-subnet1"{
   subnet_id = aws_subnet.dev-public-subnet-1.id
+  route_table_id = aws_route_table.dev-rt.id
+}
+
+resource "aws_route_table_association" "dev-rt-2-subnet2"{
+  subnet_id = aws_subnet.dev-public-subnet-2.id
   route_table_id = aws_route_table.dev-rt.id
 }
 

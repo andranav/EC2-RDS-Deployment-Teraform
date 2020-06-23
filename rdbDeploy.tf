@@ -1,5 +1,5 @@
 resource "aws_db_instance" "db_instance" {
-  multi_az = false
+  multi_az = true
   engine = var.db_engine
   engine_version = var.db_engine_version
   port = var.db_port
