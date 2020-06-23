@@ -14,3 +14,7 @@ resource "aws_db_instance" "db_instance" {
   vpc_security_group_ids = [aws_security_group.dev-db-sec-group.id]
   depends_on = [aws_security_group.dev-db-sec-group, aws_internet_gateway.dev-igw]
 }
+
+output "db_endpoint" {
+  value = aws_db_instance.db_instance.endpoint
+}
