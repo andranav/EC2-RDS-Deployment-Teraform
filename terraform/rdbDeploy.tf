@@ -7,12 +7,12 @@ resource "aws_db_instance" "db_instance" {
   allocated_storage = var.db_storage
   username = var.db_username
   password = var.db_password
-  publicly_accessible = true
+  publicly_accessible = false
   skip_final_snapshot = true
   name = var.db_name
   db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
   vpc_security_group_ids = [aws_security_group.dev-db-sec-group.id]
-  depends_on = [aws_security_group.dev-db-sec-group, aws_internet_gateway.dev-igw]
+  depends_on = [aws_security_group.dev-db-sec-group]
 }
 
 output "db_endpoint" {

@@ -19,7 +19,7 @@ resource "aws_instance" "app2" {
 }
 
 data "template_file" "app_bootstrap" {
-  template = file("./bootstrap.sh")
+  template = file(var.app_bootstrapper)
   vars = {
     db_username = var.db_username
     db_password = var.db_password

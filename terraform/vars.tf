@@ -2,14 +2,6 @@ variable "aws_region" {
   default = "us-east-2"
 }
 
-variable "az1" {
-  default = "us-east-2a"
-}
-
-variable "az2" {
-  default = "us-east-2b"
-}
-
 variable "ami" {
   default = "ami-0e84e211558a022c0"
 }
@@ -56,4 +48,8 @@ variable "db_password" {
 
 variable "db_name" {
   default = "dev_db"
+}
+
+variable "app_bootstrapper" {
+  default = "./resources/bootstrap.sh"
 }
